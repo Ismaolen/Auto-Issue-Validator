@@ -76,3 +76,28 @@ for issue in issues:
 print("\nÜberprüfung der Issues abgeschlossen.")
 
 
+
+
+print("\ns6\n")
+
+try:
+    # Holt alle Boards des Projekts
+    boards = project.boards.list()
+    if boards:
+        # Nimmt das erste Board (ändern Sie dies entsprechend, wenn Sie ein anderes Board benötigen)
+        board = boards[0]
+        print(f"Board: {board.name}")
+
+        # Holt alle Listen des Boards
+        board_lists = board.lists.list()
+        for board_list in board_lists:
+            print(f"Liste: {board_list.name}, ID: {board_list.id}")
+    else:
+        print("Keine Boards gefunden.")
+except Exception as e:
+    print(f"Fehler beim Abrufen der Boards: {e}")
+
+print("\nÜberprüfung der Boards und Listen abgeschlossen.")
+
+
+
