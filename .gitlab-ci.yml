@@ -8,5 +8,5 @@ check_issue_template:
   script:
     - pip install python-gitlab
     - python check_issues.py
-  only:
-    - schedules
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "schedule"'
