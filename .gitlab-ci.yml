@@ -1,0 +1,11 @@
+stages:
+  - check_issues
+
+check_issue_template:
+  stage: check_issues
+  image: python:3.8
+  script:
+    - pip install python-gitlab
+    - python check_issues.py
+  only:
+    - schedules
