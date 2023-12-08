@@ -84,7 +84,7 @@ try:
     # Holt alle Boards des Projekts
     boards = project.boards.list()
     if boards:
-        # Nimmt das erste Board (ändern Sie dies entsprechend, wenn Sie ein anderes Board benötigen)
+        # Nimmt das erste Board
         board = boards[0]
         print(f"Board: {board.name}")
 
