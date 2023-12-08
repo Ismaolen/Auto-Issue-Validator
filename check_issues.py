@@ -2,17 +2,43 @@ import gitlab
 import os
 
 # GitLab private token und Projekt-ID
-print("\ns1\n")
 private_token = os.getenv('GITLAB_PRIVATE_TOKEN')
 
 project_id = os.getenv('GITLAB_PROJECT_ID')
 print(project_id)
 print(private_token)
 
-print("\ns2\n")
-gl = gitlab.Gitlab('https://gitlab.rz.htw-berlin.de/', private_token=private_token)
-print("\ns3\n")
-project = gl.projects.get(project_id)
+
+# Verbindung zu GitLab herstellen
+try:
+    gl = gitlab.Gitlab('https://gitlab.rz.htw-berlin.de/', private_token=private_token)
+    gl.auth()
+except Exception as e:
+    print("Fehler bei der Verbindung zu GitLab:", e)
+    exit(1)
+
+
+# Versuchen, auf das Projekt zuzugreifen
+try:
+    project = gl.projects.get(project_id)
+    print(f"Zugriff auf Projekt {project_id} erfolgreich.")
+except gitlab.exceptions.GitlabGetError as e:
+    print(f"Fehler beim Zugriff auf das Projekt {project_id}: {e}")
+    exit(1)
+except Exception as e:
+    print(f"Ein unerwarteter Fehler ist aufgetreten: {e}")
+    exit(1)
+
+
+
+
+
+
+
+
+
+
+
 
 print("\ns4\n")
 # Holt die neuesten Issues
