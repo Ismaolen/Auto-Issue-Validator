@@ -88,9 +88,10 @@ try:
         board = boards[0]
         print(f"Board: {board.name}")
 
-        # Holt alle Listen des Boards
+        # Holt alle Listen des Boards und ruft jedes Objekt einzeln ab, um alle Daten zu erhalten
         board_lists = board.lists.list()
-        for board_list in board_lists:
+        for bl in board_lists:
+            board_list = board.lists.get(bl.id)  # Ruft jedes Listenobjekt einzeln ab
             print(f"Liste: {board_list.name}, ID: {board_list.id}")
     else:
         print("Keine Boards gefunden.")
@@ -98,6 +99,7 @@ except Exception as e:
     print(f"Fehler beim Abrufen der Boards: {e}")
 
 print("\nÜberprüfung der Boards und Listen abgeschlossen.")
+
 
 
 
