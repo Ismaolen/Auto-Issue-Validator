@@ -4,6 +4,7 @@ stages:
 check_issue_template:
   stage: check_issues
   image: python:3.8
+  tags: [Linux]
   script:
     - pip install python-gitlab
     - python check_issues.py
