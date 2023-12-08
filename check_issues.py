@@ -52,14 +52,23 @@ except Exception as e:
 
 
 
-
 print("\ns4\n")
-# Holt die neuesten Issues
-issues = project.issues.list(order_by='created_at', sort='desc', all=True)
+
+try:
+    # Holt die neuesten Issues
+    issues = project.issues.list(order_by='created_at', sort='desc', all=True)
+    print(f"Gefundene Issues: {len(issues)}")
+except Exception as e:
+    print(f"Fehler beim Abrufen der Issues: {e}")
+    exit(1)
 
 print("\ns5\n")
+
 for issue in issues:
     # Überprüft die erforderlichen Felder
     if not issue.title or not issue.description:
         print(f"Issue {issue.iid} fehlen erforderliche Informationen: Titel oder Beschreibung fehlen.")
-    # Hier könnten weitere Überprüfungen für 'Time Spent', 'Epics', 'Milestones' und 'Due Date' implementiert werden
+    # Hier könnten weitere Überprüfungen implementiert werden
+
+print("\nÜberprüfung der Issues abgeschlossen.")
+
