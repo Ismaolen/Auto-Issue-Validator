@@ -65,10 +65,14 @@ except Exception as e:
 print("\ns5\n")
 
 for issue in issues:
-    # Überprüft die erforderlichen Felder
-    if not issue.title or not issue.description:
-        print(f"Issue {issue.iid} fehlen erforderliche Informationen: Titel oder Beschreibung fehlen.")
-    # Hier könnten weitere Überprüfungen implementiert werden
+    print(f"Issue-ID: {issue.iid}")
+    print(f"Titel: {issue.title}")
+    print(f"Beschreibung: {issue.description}")
+    print(f"Status: {issue.state}")
+    print(f"Autor: {issue.author['username']}")
+    print(f"Erstellt am: {issue.created_at}")
+    print("--------------------------------------")
 
 print("\nÜberprüfung der Issues abgeschlossen.")
+
 
