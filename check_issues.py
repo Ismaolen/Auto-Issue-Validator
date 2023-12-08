@@ -6,7 +6,9 @@ print("\ns1\n")
 private_token = os.getenv('GITLAB_PRIVATE_TOKEN')
 
 project_id = os.getenv('GITLAB_PROJECT_ID')
-print(project_id, private_token)
+print(project_id)
+print(private_token)
+
 print("\ns2\n")
 gl = gitlab.Gitlab('https://gitlab.rz.htw-berlin.de/', private_token=private_token)
 print("\ns3\n")
