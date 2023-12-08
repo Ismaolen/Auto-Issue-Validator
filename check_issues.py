@@ -30,6 +30,19 @@ except Exception as e:
     exit(1)
 
 
+# Versuchen, auf das Projekt zuzugreifen
+try:
+    project = gl.projects.get(project_id)
+    print(f"Zugriff auf Projekt {project_id} erfolgreich.")
+    print(f"Pfad zum Projekt: {project.path_with_namespace}")
+except gitlab.exceptions.GitlabGetError as e:
+    print(f"Fehler beim Zugriff auf das Projekt {project_id}: {e}")
+    exit(1)
+except Exception as e:
+    print(f"Ein unerwarteter Fehler ist aufgetreten: {e}")
+    exit(1)
+
+
 
 
 
