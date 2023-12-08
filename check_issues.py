@@ -2,15 +2,20 @@ import gitlab
 import os
 
 # GitLab private token und Projekt-ID
+print("\ns1\n")
 private_token = os.getenv('GITLAB_PRIVATE_TOKEN')
+
 project_id = os.getenv('GITLAB_PROJECT_ID')
 
+print("\ns2\n")
 gl = gitlab.Gitlab('https://gitlab.com', private_token=private_token)
 project = gl.projects.get(project_id)
 
+print("\ns3\n")
 # Holt die neuesten Issues
 issues = project.issues.list(order_by='created_at', sort='desc', all=True)
 
+print("\ns4\n")
 for issue in issues:
     # Überprüft die erforderlichen Felder
     if not issue.title or not issue.description:
