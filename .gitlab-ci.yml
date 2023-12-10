@@ -7,6 +7,6 @@ check_issue_template:
   tags: [Linux]
   script:
     - pip install python-gitlab
-    - python check_issues.py
+    - python main.py
   only:
     - schedules
