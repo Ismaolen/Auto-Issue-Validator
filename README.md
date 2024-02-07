@@ -1,11 +1,9 @@
 
-## Badges
-
-Add badges from shields.io to display build status, test coverage, and more. For example:
-
 ![Build Status](https://img.shields.io/badge/build-passing-brightgreen)
 ![Coverage](https://img.shields.io/badge/coverage-80%25-yellow)
 ![GitLab](https://img.shields.io/badge/GitLab-auto--issue--validator-blue)
+![Docs](https://img.shields.io/badge/docs-available-brightgreen)
+
 
 # Auto Issue Validator
 
