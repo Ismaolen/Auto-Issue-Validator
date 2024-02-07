@@ -2,7 +2,6 @@
 ![Build Status](https://img.shields.io/badge/build-passing-brightgreen)
 ![Coverage](https://img.shields.io/badge/coverage-80%25-yellow)
 ![GitHub](https://img.shields.io/badge/GitLab-auto--issue--validator-blue)
-![Docs](https://img.shields.io/badge/docs-available-brightgreen)
 ![Documentation](https://img.shields.io/badge/documentation-100%25-brightgreen)
 
 
